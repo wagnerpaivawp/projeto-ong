@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Projetos, formas de doação e voluntariado do Instituto Raízes.">
+  <title>Instituto Raízes | Projetos</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <img src="../imagens/logo.png" alt="Logotipo do Instituto Raízes" width="80" height="80">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li class="tem-submenu">
+          <a href="projetos.html" aria-current="page">Projetos</a>
+          <ul class="submenu">
+            <li><a href="projetos.html#reforco-escolar">Reforço Escolar</a></li>
+            <li><a href="projetos.html#casa-segura">Casa Segura</a></li>
+            <li><a href="projetos.html#maos-que-produzem">Mãos que Produzem</a></li>
+            <li><a href="projetos.html#doacao">Como doar</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html">Seja voluntário</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Nossos projetos</h1>
+
+    <section id="frentes">
+      <h2>Frentes de atuação</h2>
+      <p>Trabalhamos em três frentes: educação, moradia e geração de renda. Cada projeto abaixo pertence a uma delas.</p>
+    </section>
+
+    <section id="projetos">
+      <h2>Projetos em andamento</h2>
+      <div class="grid" id="lista-projetos"></div>
+
+      <template id="tpl-projeto">
+        <article class="col-md-6 col-lg-4">
+          <p class="badges"><span class="badge categoria"></span> <span class="badge badge-vagas">Vagas abertas</span></p>
+          <h3></h3>
+          <picture>
+            <source type="image/webp">
+            <img width="400" height="250" alt="">
+          </picture>
+          <p class="descricao"></p>
+          <p><a href="cadastro.html">Quero ajudar neste projeto</a></p>
+        </article>
+      </template>
+    </section>
+
+    <section id="doacao">
+      <h2>Como doar</h2>
+      <p>Todo recurso recebido é aplicado nos projetos acima e prestado conta no relatório anual.</p>
+      <ul>
+        <li>PIX: doe@institutoraizes.org.br</li>
+        <li>Transferência bancária: dados enviados por e-mail após contato</li>
+        <li>Doação de itens: material escolar, roupas e alimentos não perecíveis</li>
+      </ul>
+      <p><button class="botao botao-doar" type="button" id="abrir-pix">Ver chave PIX</button></p>
+      <dialog id="modal-pix" aria-labelledby="titulo-pix">
+        <h3 id="titulo-pix">Doação via PIX</h3>
+        <p>Chave: <strong>doe@institutoraizes.org.br</strong></p>
+        <p>Instituto Raízes, CNPJ 00.000.000/0001-00</p>
+        <button type="button" id="fechar-pix">Fechar</button>
+      </dialog>
+    </section>
+
+    <section id="voluntariado">
+      <h2>Voluntariado</h2>
+      <p>Temos vagas abertas nas três frentes. Não é preciso experiência prévia.</p>
+      <ul>
+        <li>Ter 18 anos ou mais</li>
+        <li>Disponibilidade mínima de 4 horas por semana</li>
+        <li>Participar da reunião de integração</li>
+      </ul>
+      <p><a class="botao" href="cadastro.html">Fazer meu cadastro</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Instituto Raízes | CNPJ 00.000.000/0001-00</p>
+    <p>&copy; 2026 Todos os direitos reservados</p>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../js/vendor/chart.umd.js"></script>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>

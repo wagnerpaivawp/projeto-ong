@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Instituto Raízes: ONG de educação, moradia e geração de renda em Fortaleza.">
+  <title>Instituto Raízes | Início</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <img src="../imagens/logo.png" alt="Logotipo do Instituto Raízes" width="80" height="80">
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Início</a></li>
+        <li class="tem-submenu">
+          <a href="projetos.html">Projetos</a>
+          <ul class="submenu">
+            <li><a href="projetos.html#reforco-escolar">Reforço Escolar</a></li>
+            <li><a href="projetos.html#casa-segura">Casa Segura</a></li>
+            <li><a href="projetos.html#maos-que-produzem">Mãos que Produzem</a></li>
+            <li><a href="projetos.html#doacao">Como doar</a></li>
+          </ul>
+        </li>
+        <li><a href="cadastro.html">Seja voluntário</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Instituto Raízes</h1>
+
+    <section id="apresentacao">
+      <h2>Quem somos</h2>
+      <div class="grid">
+      <picture class="col-lg-8">
+        <source srcset="../imagens/equipe.webp" type="image/webp">
+        <img src="../imagens/equipe.jpg" alt="Voluntários do Instituto Raízes entregando cestas básicas em uma comunidade de Fortaleza" width="800" height="450">
+      </picture>
+      <p class="col-lg-4">Somos uma organização sem fins lucrativos que atua desde 2015 em comunidades de Fortaleza, com foco em educação, moradia digna e geração de renda.</p>
+      </div>
+    </section>
+
+    <section id="missao">
+      <h2>Missão e valores</h2>
+      <h3>Missão</h3>
+      <p>Fortalecer famílias em situação de vulnerabilidade por meio de projetos educativos e de apoio à moradia.</p>
+      <h3>Valores</h3>
+      <ul>
+        <li>Transparência na prestação de contas</li>
+        <li>Respeito à comunidade</li>
+        <li>Trabalho em rede</li>
+      </ul>
+    </section>
+
+    <section id="impacto">
+      <h2>Nossos números</h2>
+      <p>Famílias atendidas e voluntários ativos a cada ano desde 2022.</p>
+      <div class="grafico" role="img" aria-label="Gráfico de barras: famílias atendidas cresceram de 120 em 2022 para 410 em 2026; voluntários de 18 para 73">
+        <canvas id="grafico-impacto"></canvas>
+      </div>
+    </section>
+
+    <section id="contato">
+      <h2>Fale conosco</h2>
+      <address>
+        <p>Rua das Flores, 120, Benfica, Fortaleza, CE</p>
+        <p>Telefone: <a href="tel:+558533334444">(85) 3333-4444</a></p>
+        <p>E-mail: <a href="mailto:contato@institutoraizes.org.br">contato@institutoraizes.org.br</a></p>
+      </address>
+      <p><a class="botao" href="cadastro.html">Quero ser voluntário</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Instituto Raízes | CNPJ 00.000.000/0001-00</p>
+    <p>&copy; 2026 Todos os direitos reservados</p>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="../js/vendor/chart.umd.js"></script>
+  <script type="module" src="../js/main.js"></script>
+</body>
+</html>
