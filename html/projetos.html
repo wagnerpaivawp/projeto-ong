@@ -6,10 +6,17 @@
   <meta name="description" content="Projetos, formas de doação e voluntariado do Instituto Raízes.">
   <title>Instituto Raízes | Projetos</title>
   <link rel="stylesheet" href="../css/style.css">
+  <script>
+    // Aplica o tema salvo antes do primeiro paint, evitando o flash de tema errado
+    try { var t = localStorage.getItem('raizes:tema'); if (t) document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
 </head>
 <body>
   <header>
     <img src="../imagens/logo.png" alt="Logotipo do Instituto Raízes" width="80" height="80">
+    <button class="tema-toggle botao" type="button" aria-pressed="false" aria-label="Ativar modo escuro">
+      <span class="icone-lua" aria-hidden="true">&#9790;</span><span class="icone-sol" aria-hidden="true">&#9728;</span> Tema
+    </button>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
       <span></span><span></span><span></span>
     </button>
