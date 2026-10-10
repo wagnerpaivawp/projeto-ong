@@ -17,7 +17,7 @@ o cadastro de voluntários com dados íntegros.
 - HTML5 semântico (header, nav, main, section, article, form, fieldset, template, dialog)
 - CSS3: variáveis customizadas (design system), Grid de 12 colunas, Flexbox, media queries, transições
 - JavaScript ES6+: ES Modules, History API, DOM, Constraint Validation API, localStorage, FormData
-- Chart.js 4.5.1 (gráfico de impacto), vendorizado em `js/vendor/`
+- Chart.js 4.5.1 (gráfico de impacto), instalado via npm e empacotado pelo Vite 6
 - Git e GitHub (GitFlow, issues, milestones, pull requests, tags, GitHub Pages)
 
 ## Funcionalidades
@@ -35,22 +35,27 @@ o cadastro de voluntários com dados íntegros.
 ## Pré-requisitos
 
 - Um navegador moderno (Chrome, Edge, Firefox ou Safari atuais)
-- Um servidor HTTP local para desenvolvimento. Os ES Modules e a SPA não funcionam abrindo os arquivos
-  direto do disco (`file://`). Opções: extensão Live Server do VS Code, `python -m http.server` ou `npx serve`
+- Node.js 20 ou superior e npm, para instalar o Vite (bundler) e o Chart.js
 - Git, para clonar e contribuir
-
-Não há dependências para instalar com npm: o único pacote externo (Chart.js) já está no repositório.
 
 ## Instalação e execução
 
 ```bash
 git clone https://github.com/wagnerpaivawp/projeto-ong.git
 cd projeto-ong
-python -m http.server 8080
+npm install      # instala Vite e Chart.js
+npm run dev      # servidor de desenvolvimento em http://localhost:5173/projeto-ong/
 ```
 
-Abra http://localhost:8080/html/index.html no navegador.
-Com o VS Code, basta abrir a pasta e clicar em "Go Live" (Live Server).
+## Build de produção
+
+```bash
+npm run build    # gera a pasta dist/ com HTML, CSS e JS minificados
+npm run preview  # testa o build localmente
+```
+
+O deploy é automático: a cada push na `main`, o workflow em `.github/workflows/deploy.yml`
+roda o build e publica a pasta `dist/` no GitHub Pages.
 
 ## Testes e validação
 
@@ -68,10 +73,12 @@ projeto-ong/
 ├── css/style.css     design system, layout, componentes e estados
 ├── js/
 │   ├── main.js       ponto de entrada (type="module")
-│   ├── menu.js, toast.js, mascaras.js, validacao.js, armazenamento.js,
-│   │   componentes.js, projetos.js, graficos.js, spa.js
-│   └── vendor/chart.umd.js
-└── imagens/          JPG/PNG com versão WebP
+│   └── menu.js, tema.js, toast.js, mascaras.js, validacao.js, armazenamento.js,
+│       componentes.js, projetos.js, graficos.js, spa.js
+├── imagens/          JPG/PNG com versão WebP
+├── package.json      scripts dev, build e preview
+├── vite.config.js    entradas multipágina, base do Pages e minificação
+└── .github/workflows/deploy.yml   build e deploy automáticos
 ```
 
 ## Versionamento e fluxo de trabalho
