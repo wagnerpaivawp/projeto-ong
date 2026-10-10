@@ -1,9 +1,12 @@
-// Gráfico de impacto na página inicial (Chart.js 4, carregado de js/vendor/chart.umd.js)
+// Gráfico de impacto na página inicial (Chart.js 4, instalado via npm e empacotado pelo Vite)
+// Importa só o necessário para um gráfico de barras (tree-shaking reduz o bundle)
+import { Chart, BarController, BarElement, CategoryScale, LinearScale, Legend, Title, Tooltip } from 'chart.js';
+Chart.register(BarController, BarElement, CategoryScale, LinearScale, Legend, Title, Tooltip);
 var graficoImpacto = null; // guarda a instância para destruir antes de redesenhar (SPA)
 
 export function iniciarGraficos() {
   var canvas = document.getElementById('grafico-impacto');
-  if (!canvas || typeof Chart === 'undefined') return;
+  if (!canvas) return;
 
   if (graficoImpacto) { graficoImpacto.destroy(); graficoImpacto = null; }
 

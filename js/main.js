@@ -1,4 +1,5 @@
 // Ponto de entrada: importa os módulos e define a ordem de inicialização
+import { iniciarTema } from './tema.js';
 import { iniciarMenu } from './menu.js';
 import { iniciarMascaras } from './mascaras.js';
 import { iniciarValidacao } from './validacao.js';
@@ -19,6 +20,7 @@ function iniciarPagina() {
   iniciarGraficos();
 }
 
+iniciarTema();          // antes de tudo, para não piscar o tema errado
 iniciarMenu();          // header é permanente: uma vez só
 iniciarPagina();
 iniciarSPA(iniciarPagina);
